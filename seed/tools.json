@@ -1,0 +1,84 @@
+[
+  {
+    "tool_name": "kg_query",
+    "tool_type": "builtin",
+    "description": "Query the knowledge graph for nodes and edges matching criteria",
+    "input_schema": {
+      "type": "object",
+      "properties": {
+        "query": {"type": "string"},
+        "node_type": {"type": "string"},
+        "limit": {"type": "integer", "default": 10}
+      }
+    },
+    "output_schema": {
+      "type": "object",
+      "properties": {
+        "nodes": {"type": "array"},
+        "edges": {"type": "array"}
+      }
+    },
+    "status": "active",
+    "required_permissions": ["kg_query"]
+  },
+  {
+    "tool_name": "kg_write",
+    "tool_type": "builtin",
+    "description": "Write nodes and edges to the knowledge graph with provenance tracking",
+    "input_schema": {
+      "type": "object",
+      "properties": {
+        "nodes": {"type": "array"},
+        "edges": {"type": "array"}
+      }
+    },
+    "output_schema": {
+      "type": "object",
+      "properties": {
+        "created_node_ids": {"type": "array"},
+        "created_edge_ids": {"type": "array"}
+      }
+    },
+    "status": "active",
+    "required_permissions": ["kg_write"]
+  },
+  {
+    "tool_name": "pubmed_search",
+    "tool_type": "builtin",
+    "description": "Search PubMed for research publications matching a query",
+    "input_schema": {
+      "type": "object",
+      "properties": {
+        "query": {"type": "string"},
+        "max_results": {"type": "integer", "default": 10}
+      }
+    },
+    "output_schema": {
+      "type": "object",
+      "properties": {
+        "results": {"type": "array"}
+      }
+    },
+    "status": "active",
+    "required_permissions": ["pubmed_search"]
+  },
+  {
+    "tool_name": "cost_check",
+    "tool_type": "builtin",
+    "description": "Check current budget utilization and remaining API credits",
+    "input_schema": {
+      "type": "object",
+      "properties": {}
+    },
+    "output_schema": {
+      "type": "object",
+      "properties": {
+        "total_spent": {"type": "number"},
+        "remaining": {"type": "number"},
+        "utilization_pct": {"type": "number"}
+      }
+    },
+    "status": "active",
+    "required_permissions": ["cost_check"]
+  }
+]

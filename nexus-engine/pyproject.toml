@@ -1,0 +1,16 @@
+[project]
+name = "nexus-engine"
+version = "0.1.0"
+description = "NEXUS agent orchestration engine — Originator daemon"
+requires-python = ">=3.12"
+dependencies = [
+    "nexus-core",
+    "asyncpg-listen>=0.0.7",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project.scripts]
+nexus-engine = "nexus_engine.main:run"

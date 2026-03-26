@@ -1,0 +1,33 @@
+[project]
+name = "nexus-workspace"
+version = "0.1.0"
+description = "NEXUS — Self-Evolving Agent Research Civilization"
+requires-python = ">=3.12"
+
+[tool.uv.workspace]
+members = ["nexus-core", "nexus-engine", "nexus-cli", "nexus-api"]
+
+[tool.uv.sources]
+nexus-core = { workspace = true }
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]
+markers = [
+    "integration: requires PostgreSQL",
+    "slow: takes >10s",
+]
+
+[tool.ruff]
+line-length = 120
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "N", "W"]
+
+[dependency-groups]
+dev = [
+    "alembic>=1.13",
+    "pytest>=9.0.2",
+    "pytest-asyncio>=1.3.0",
+]

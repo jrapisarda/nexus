@@ -1,0 +1,30 @@
+{
+  "name": "nexus-dashboard",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@tanstack/react-query": "^5.62.0",
+    "react": "^18.3.1",
+    "react-d3-tree": "^3.6.3",
+    "react-dom": "^18.3.1",
+    "react-dropzone": "^14.4.1",
+    "react-force-graph-2d": "^1.25.7",
+    "react-use-websocket": "^4.9.0",
+    "reactflow": "^11.11.4",
+    "recharts": "^2.15.0",
+    "zustand": "^5.0.2"
+  },
+  "devDependencies": {
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "@vitejs/plugin-react": "^4.3.4",
+    "typescript": "^5.6.3",
+    "vite": "^6.0.3"
+  }
+}

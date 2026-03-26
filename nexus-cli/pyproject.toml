@@ -1,0 +1,17 @@
+[project]
+name = "nexus-cli"
+version = "0.1.0"
+description = "NEXUS CLI — command-line interface for the agent civilization"
+requires-python = ">=3.12"
+dependencies = [
+    "nexus-core",
+    "typer>=0.12",
+    "rich>=13.0",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project.scripts]
+nexus = "nexus_cli.main:app"
